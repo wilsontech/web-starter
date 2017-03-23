@@ -36,7 +36,7 @@ mysql:
       default-storage-engine: InnoDB
       innodb-buffer-pool-size: 512M
       innodb-log-buffer-size: 8M
-      innodb-log-file-size: 10M
+      innodb-log-file-size: 128M
       innodb-file-per-table: 1
       innodb-open-files: 300
       innodb_flush_log_at_trx_commit: 0
@@ -77,14 +77,14 @@ nginx:
       # nginx.conf (main server) declarations
       # dictionaries map to blocks {} and lists cause the same declaration to repeat with different values
       config: 
-        user: vagrant
+        user: nginx
         worker_processes: 1
         pid: /var/run/nginx.pid
         events:
           worker_connections: 1024
         http:
           # General Global settings
-          sendfile: 'on'
+          sendfile: 'off'
           tcp_nopush: 'on'
           tcp_nodelay: 'on'
           keepalive_timeout: 65
