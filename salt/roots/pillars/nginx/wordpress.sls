@@ -15,6 +15,7 @@ nginx:
               - ssl_certificate: ssl/vagrant.crt
               - ssl_certificate_key: ssl/vagrant.key
               - root: /vagrant/public
+              - index index.php 
               - access_log: /var/log/nginx/vagrant.log
               - location /:
                 - try_files:
